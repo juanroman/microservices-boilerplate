@@ -29,4 +29,4 @@ test_script:
   - cmd: dotnet restore ./src/Microservices.BoilerplateTests/Microservices.BoilerplateTests.csproj --verbosity m
   # run the unit tests (requires changing into the test directory)
   #- cmd: cd src/Microservices.BoilerplateTests
-  - cmd: dotnet test /p:CollectCoverage=true /p:Exclude="[xunit.*]*"
+  - cmd: dotnet test ./src/Microservices.BoilerplateTests/Microservices.BoilerplateTests.csproj /p:CollectCoverage=true /p:Exclude="[xunit.*]*"
