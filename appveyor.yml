@@ -17,9 +17,10 @@ dotnet_csproj:
   informational_version: '{version}'
 before_build:
   - cmd: dotnet --version
-  - cmd: dotnet restore ./src/Microservices.Boilerplate/Microservices.Boilerplate.csproj --verbosity m
+  - cmd: dotnet new tool-manifest
   - cmd: dotnet tool install dotnet-sonarscanner
 build_script:
+  - cmd: dotnet restore ./src/Microservices.Boilerplate/Microservices.Boilerplate.csproj --verbosity m
   - cmd: dotnet build ./src/Microservices.Boilerplate/Microservices.Boilerplate.csproj --verbosity m
 after_build:
   - cmd: dotnet pack ./src/Microservices.Boilerplate/Microservices.Boilerplate.csproj /p:Version=%APPVEYOR_BUILD_VERSION%
