@@ -35,7 +35,7 @@ test_script:
   - cmd: echo %APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL%
   - cmd: echo %APPVEYOR_REPO_COMMIT_MESSAGE%
   - cmd: echo %APPVEYOR_JOB_ID%
-  - cmd: csmacnz.Coveralls --opencover --input coverage.opencover.xml --repoToken JGmTjpDKd24Cvz8znuH8wQa3QrTQQyOlB --commitId %APPVEYOR_REPO_COMMIT% --commitBranch %APPVEYOR_REPO_BRANCH% --commitAuthor %APPVEYOR_REPO_COMMIT_AUTHOR% --commitEmail %APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL% --commitMessage %APPVEYOR_REPO_COMMIT_MESSAGE% --jobId %APPVEYOR_JOB_ID%
+  - cmd: csmacnz.Coveralls --opencover --input "coverage.opencover.xml" --repoToken "JGmTjpDKd24Cvz8znuH8wQa3QrTQQyOlB" --commitId "%APPVEYOR_REPO_COMMIT%" --commitBranch "%APPVEYOR_REPO_BRANCH%" --commitAuthor "%APPVEYOR_REPO_COMMIT_AUTHOR%" --commitEmail "%APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL%" --commitMessage "%APPVEYOR_REPO_COMMIT_MESSAGE%" --jobId "%APPVEYOR_JOB_ID%"
 artifacts:
   - path: '**\*.nupkg'
 deploy: off
