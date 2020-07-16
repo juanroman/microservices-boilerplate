@@ -27,7 +27,14 @@ test_script:
   # restore packages for our unit tests
   - cmd: dotnet restore ./src/Microservices.BoilerplateTests/Microservices.BoilerplateTests.csproj --verbosity m
   - cmd: dotnet test ./src/Microservices.BoilerplateTests/Microservices.BoilerplateTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-  - cmd: csmacnz.Coveralls --opencover --input ./src/Microservices.BoilerplateTests/coverage.opencover.xml --repoToken JGmTjpDKd24Cvz8znuH8wQa3QrTQQyOlB --commitId %APPVEYOR_REPO_COMMIT% --commitBranch %APPVEYOR_REPO_BRANCH% --commitAuthor %APPVEYOR_REPO_COMMIT_AUTHOR% --commitEmail %APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL% --commitMessage %APPVEYOR_REPO_COMMIT_MESSAGE% --jobId %APPVEYOR_JOB_ID%
+  - cmd: cd src/Microservices.BoilerplateTests
+  - cmd: echo %APPVEYOR_REPO_COMMIT%
+  - cmd: echo %APPVEYOR_REPO_BRANCH%
+  - cmd: echo %APPVEYOR_REPO_COMMIT_AUTHOR%
+  - cmd: echo %APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL%
+  - cmd: echo %APPVEYOR_REPO_COMMIT_MESSAGE%
+  - cmd: echo %APPVEYOR_JOB_ID%
+  - cmd: csmacnz.Coveralls --opencover --input coverage.opencover.xml --repoToken JGmTjpDKd24Cvz8znuH8wQa3QrTQQyOlB --commitId %APPVEYOR_REPO_COMMIT% --commitBranch %APPVEYOR_REPO_BRANCH% --commitAuthor %APPVEYOR_REPO_COMMIT_AUTHOR% --commitEmail %APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL% --commitMessage %APPVEYOR_REPO_COMMIT_MESSAGE% --jobId %APPVEYOR_JOB_ID%
 artifacts:
   - path: '**\*.nupkg'
 deploy: off
