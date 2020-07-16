@@ -27,7 +27,7 @@ test_script:
   # restore packages for our unit tests
   - cmd: dotnet restore ./src/Microservices.BoilerplateTests/Microservices.BoilerplateTests.csproj --verbosity m
   - cmd: dotnet test ./src/Microservices.BoilerplateTests/Microservices.BoilerplateTests.csproj /p:CollectCoverage=true
-  - codecov -f ./src/Microservices.BoilerplateTests/coverage.json
+  - codecov -f ./src/Microservices.BoilerplateTests/coverage.json -t 0e2b45e7-adf5-41e9-96ea-38eeb339d5a9
 artifacts:
   - path: '**\*.nupkg'
 deploy: off
