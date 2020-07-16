@@ -28,6 +28,7 @@ test_script:
   - cmd: dotnet restore ./src/Microservices.BoilerplateTests/Microservices.BoilerplateTests.csproj --verbosity m
   - cmd: dotnet test ./src/Microservices.BoilerplateTests/Microservices.BoilerplateTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
   - cmd: cd src/Microservices.BoilerplateTests
+  - cmd: dir
   - cmd: echo %APPVEYOR_REPO_COMMIT%
   - cmd: echo %APPVEYOR_REPO_BRANCH%
   - cmd: echo %APPVEYOR_REPO_COMMIT_AUTHOR%
