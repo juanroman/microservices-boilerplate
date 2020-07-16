@@ -27,7 +27,7 @@ after_build:
 test_script:
   # restore packages for our unit tests
   - cmd: dotnet restore ./src/Microservices.BoilerplateTests/Microservices.BoilerplateTests.csproj --verbosity m
-  - cmd: dotnet dotnet-sonarscanner begin /d:sonar.organization=juanroman /d:sonar.projectKey=juanroman_microservices-boilerplate /d:sonar.cs.opencover.reportsPaths=**/coverage.opencover.xml /d:sonar.host.url=https://sonarcloud.io /d:sonar.login=2b31957f85041c08196faca383b0ce332a3883df
+  - cmd: dotnet dotnet-sonarscanner begin /k:juanroman_microservices-boilerplate /d:sonar.organization=juanroman /d:sonar.cs.opencover.reportsPaths=**/coverage.opencover.xml -d:sonar.cs.vstest.reportsPaths=**/*.trx /d:sonar.host.url=https://sonarcloud.io /d:sonar.login=2b31957f85041c08196faca383b0ce332a3883df
   - cmd: dotnet build
   - cmd: dotnet test ./src/Microservices.BoilerplateTests/Microservices.BoilerplateTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
   - cmd: dotnet dotnet-sonarscanner end /d:sonar.login=2b31957f85041c08196faca383b0ce332a3883df
