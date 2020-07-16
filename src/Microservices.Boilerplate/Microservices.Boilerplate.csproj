@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>juanroman</Authors>
+    <Company>Juan Roman Escamilla</Company>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageLicenseExpression>https://raw.githubusercontent.com/juanroman/microservices-boilerplate/master/LICENSE</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/juanroman/microservices-boilerplate</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
